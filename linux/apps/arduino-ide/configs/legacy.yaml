@@ -1,0 +1,32 @@
+{%- set platform = "linux" %}
+{%- set application = "arduino-ide-legacy" %}
+
+platform: "{{ platform }}"
+appconfig:
+  app_name: "{{ application }}"
+  app_data_src: "internal"
+  internal_state_dir: "/home/{{ container_user }}/.mozilla/firefox"
+  running_executable: "arduino"
+  use_subprofiles: True
+build:
+  dependencies:
+    scripts:
+      - script: "arduino-ide-legacy.py"
+        args:
+          - "-p"
+          - "./cache"
+  dockerfile: "Dockerfile-legacy"
+  image: "linux/arduino-ide-legacy"
+  tag: "latest"
+container:    
+  gpu_hook:
+    enabled: True
+  image: "linux/arduino-ide-legacy"
+  tag: "latest"
+devices:
+  audio: 
+    enabled: False
+  hwrender: 
+    enabled: False
+  joystick: 
+    enabled: False

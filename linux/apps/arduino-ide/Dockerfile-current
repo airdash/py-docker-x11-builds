@@ -1,0 +1,7 @@
+FROM ubuntu:20.04-base
+ADD cache/arduino-current-latest.zip /opt
+WORKDIR /opt
+RUN unzip arduino-current-latest.zip
+RUN find /opt -maxdepth 1 -mindepth 1 -type d -exec mv {} arduino-ide \;
+ENTRYPOINT [ "/opt/arduino-ide/arduino-ide" ]
+USER sandbox

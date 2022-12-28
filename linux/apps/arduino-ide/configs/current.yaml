@@ -1,0 +1,38 @@
+{%- set platform = "linux" %}
+{%- set application = "arduino-ide" %}
+
+platform: "{{ platform }}"
+appconfig:
+  app_name: "{{ application }}"
+  app_data_src: "internal"
+  internal_state_dir: "/home/{{ container_user }}/.mozilla/firefox"
+  running_executable: "arduino"
+  use_subprofiles: True
+build:
+  dependencies:
+    scripts:
+      - script: arduino-ide-current.py
+        args:
+          - "-p"
+          - "./cache"
+  dockerfile: "Dockerfile-current"
+  image: "linux/arduino-ide"
+  tag: "latest"
+container:    
+  gpu_hook:
+    enabled: True
+  image: "linux/arduino-ide"
+  seccomp_profile: "chrome.json"
+  shm_size: "2G"
+  tag: "latest"
+  mounts:
+    _full_profile_dir/Arduino: "/home/sandbox/Arduino"
+    _full_profile_dir/arduinoIDE: "/home/sandbox/.arduinoIDE"
+    _full_profile_dir/arduino15: "/home/sandbox/.arduino15"
+devices:
+  audio: 
+    enabled: False
+  hwrender: 
+    enabled: False
+  joystick: 
+    enabled: False

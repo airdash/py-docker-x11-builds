@@ -1,0 +1,6 @@
+FROM ubuntu:20.04-base
+ADD cache/arduino-legacy-latest.tar.xz /opt
+WORKDIR /opt
+RUN find /opt -maxdepth 1 -mindepth 1 -type d -exec mv {} arduino-ide \;
+ENTRYPOINT [ "/opt/arduino-ide/arduino" ]
+USER sandbox
