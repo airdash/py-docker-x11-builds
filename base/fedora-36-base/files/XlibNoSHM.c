@@ -29,14 +29,14 @@
  * Compile and build library:
 	cc -shared -o XlibNoSHM.so XlibNoSHM.c
  * to be used with
- *   LD_PRELOAD='libdl.so ./XlibNoSHM.so' firefox
+ *   LD_PRELOAD='libdl.so.2 ./XlibNoSHM.so' firefox
  */
 
 #include <stdio.h>
 #include <string.h>
 #include <X11/Xlib.h>
 #include <dlfcn.h>
-#define LIBXLIB "libXext.so"
+#define LIBXLIB "libXext.so.6"
 
 Bool XQueryExtension(Display* dpl, _Xconst char* name, int* major, int* event, int* error)
 {
