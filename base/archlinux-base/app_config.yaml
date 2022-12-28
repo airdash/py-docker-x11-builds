@@ -1,0 +1,6 @@
+build:
+  automatic: True
+  image: "base/archlinux"
+  tag: "latest"
+  dockerfile_update: 
+    - pacman -Syu --noconfirm

@@ -1,0 +1,12 @@
+build:
+  automatic: True
+  always_full_update: True
+  depends_on: "base/fedora:36"
+  image: "base/fedora"
+  install_gpu_driver: True
+  tag: "36-nvidia"
+  dockerfile_update:
+    - USER root
+    - RUN dnf update -y
+    - USER sandbox
+

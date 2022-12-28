@@ -1,0 +1,5 @@
+WARNING
+
+CentOS 6.x is END OF LIFE - you should not use this for anything except limited, *network-disabled* applications.
+
+Beware of other security risks that may be inherent in using old, vulnerable libraries and applications.

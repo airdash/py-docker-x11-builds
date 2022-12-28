@@ -1,0 +1,11 @@
+build:
+  automatic: False
+  image: "base/centos6"
+  tag: "latest"
+  dockerfile_update: 
+    - yum update -y
+container:
+  network_mode: "none"
+devices:
+  network:
+    enabled: False

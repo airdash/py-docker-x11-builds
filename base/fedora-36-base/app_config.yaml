@@ -1,0 +1,4 @@
+build:
+  automatic: True
+  image: "base/fedora"
+  tag: "36"
