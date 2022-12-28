@@ -1,4 +1,4 @@
 build:
   automatic: True
-  image: "base/fedora"
+  image: "pydockerx11/base/fedora"
   tag: "36"

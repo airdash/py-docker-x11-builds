@@ -16,12 +16,12 @@ build:
           - "-p"
           - "./cache"
   dockerfile: "Dockerfile-legacy"
-  image: "linux/arduino-ide-legacy"
+  image: "pydockerx11/linux/arduino-ide-legacy"
   tag: "latest"
 container:    
   gpu_hook:
     enabled: True
-  image: "linux/arduino-ide-legacy"
+  image: "pydockerx11/linux/arduino-ide-legacy"
   tag: "latest"
 devices:
   audio: 

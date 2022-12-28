@@ -1,4 +1,5 @@
-FROM ubuntu:20.04-base
+FROM pydockerx11/base/ubuntu:20.04-x11
+USER root
 ADD cache/arduino-current-latest.zip /opt
 WORKDIR /opt
 RUN unzip arduino-current-latest.zip

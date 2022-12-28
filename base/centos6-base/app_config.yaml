@@ -1,6 +1,6 @@
 build:
   automatic: False
-  image: "base/centos6"
+  image: "pydockerx11/base/centos6"
   tag: "latest"
   dockerfile_update: 
     - yum update -y

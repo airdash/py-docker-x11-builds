@@ -3,3 +3,8 @@ WARNING
 CentOS 6.x is END OF LIFE - you should not use this for anything except limited, *network-disabled* applications.
 
 Beware of other security risks that may be inherent in using old, vulnerable libraries and applications.
+
+### Why include this then?
+
+Because some applications only run in older, unsupported versions of operating systems and they're fun to tool around with
+for either entertainment or historical reasons.

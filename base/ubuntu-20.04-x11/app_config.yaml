@@ -1,0 +1,6 @@
+build:
+  automatic: True
+  image: "pydockerx11/base/ubuntu"
+  tag: "20.04-x11"
+  dockerfile_update:
+    - apt-get update && apt-get dist-upgrade -y
