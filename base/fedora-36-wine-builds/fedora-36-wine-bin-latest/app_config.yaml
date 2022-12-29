@@ -1,0 +1,20 @@
+build:
+  dependencies:
+    github_releases:
+      - name: "glorious-eggroll-wine-latest"
+        release: "latest"
+        destination: "./cache"
+        repo: "GloriousEggroll/wine-ge-custom"
+        files:
+          - match: '.*\.sha512sum'
+            symlink: "wine-ge-custom-latest.sha512sum"
+          - match: '.*\.tar.xz'
+            symlink: "wine-ge-custom-latest.tar.xz"
+  automatic: True
+  image: "pydockerx11/base/fedora"
+  install_gpu_driver: False
+  tag: "36-wine-bin-latest"
+  dockerfile_update:
+    - USER root
+    - RUN dnf update -y
+    - USER sandbox

@@ -1,0 +1,18 @@
+build:
+  dependencies:
+    github_releases:
+      - name: "glorious-eggroll-wine"
+        release: "GE-Proton7-29"
+        destination: "./cache"
+        repo: "GloriousEggroll/wine-ge-custom"
+        files:
+          - match: '.*\.sha512sum'
+          - match: '.*\.tar.xz'
+  automatic: True
+  image: "pydockerx11/base/fedora"
+  install_gpu_driver: False
+  tag: "36-wine-bin-7-29"
+  dockerfile_update:
+    - USER root
+    - RUN dnf update -y
+    - USER sandbox

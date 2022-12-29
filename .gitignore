@@ -136,3 +136,7 @@ dmypy.json
 # Caches and source caches
 cache/
 src/
+
+# Vim temporary files
+
+*.sw*

@@ -1,10 +1,8 @@
 build:
   automatic: True
-  always_full_update: True
-  depends_on: "pydockerx11/base/fedora:36-x11"
   image: "pydockerx11/base/fedora"
-  install_gpu_driver: True
-  tag: "36-nvidia"
+  install_gpu_driver: False
+  tag: "36-wine-common"
   dockerfile_update:
     - USER root
     - RUN dnf update -y
